@@ -1,48 +1,27 @@
 <template>
   <div class="app">
-    <Header :addUser="addUser" />
-    <UsersList :users="users" />
-    
+    <UsersManager />
   </div>
-
-
 </template>
 
-
 <script>
-import Header from './components/Header.vue';
-import UsersList from './components/UsersList.vue';
-
+import UsersManager from "./components/users/UsersManager.vue";
 export default {
   components: {
-    Header,
-    UsersList,
-
+    UsersManager,
   },
-  data() {
-    return {
-      users: [
-        {number: 1, FIO: 'Зубенко Михаил Петрович', company: 'ООО "Ассоль"', group: 'Партнер', presence: 'Присутствую'},
-      ],
-    }
-  },
-  methods: {
-    addUser(user) {
-      this.users.push(user);
-    },
- }
-  
 };
+
 </script>
 
+<style>
+.app {
+  font-family: "Open Sans", sans-serif;
+}
 
-<style >
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-
-
 </style>
